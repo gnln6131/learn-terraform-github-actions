@@ -77,3 +77,12 @@ resource "aws_security_group" "web-sg" {
 output "web-address" {
   value = "${aws_instance.web.public_dns}:8081"
 }
+
+resource "aws_subnet" "main" {
+  vpc_id     = "vpc-0047741233bc25c5e"
+  cidr_block = "172.31.64.0/20"
+
+  tags = {
+    Name = "Main"
+  }
+}
